@@ -29,6 +29,7 @@ in {
   withLegacyExplorer = false;
   withCardanoDBExtended = true;
   withFaucet = false;
+  withFaucetOptions = {};
 
   initialPythonExplorerDBSyncDone = false;
 

@@ -24,6 +24,7 @@ in {
 
   environment.systemPackages = with pkgs; [
     faucetPkgs.cardano-wallet-byron
+    faucetPkgs.cardano-wallet-shelley
     jq
   ];
 
@@ -39,8 +40,7 @@ in {
   services.cardano-faucet = {
     enable = true;
     cardanoEnv = globals.environmentName;
-    package = faucetPkgs.packages.cardano-faucet-cr;
-    walletPackage = faucetPkgs.cardano-wallet-byron;
+    package = faucetPkgs.packages.cardano-faucet;
 
     # Defaults to 1000 ADA per request
     #lovelacesToGive = 1000000000;
@@ -50,7 +50,7 @@ in {
 
     # Defaults to a 1 day rate request limit, exemptable by API key
     #secondsBetweenRequests = 3600;
-  };
+  } // globals.faucetOptions;
 
   deployment.keys = {
     "faucet.mnemonic" = {
