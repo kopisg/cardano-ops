@@ -570,4 +570,14 @@
     port = 3001;
     valency = 1;
   }
+  {
+    operator = "KOPI1";
+    addr = "156.249.8.207";
+    port = 8081;
+  }
+  {
+    operator = "KOPI2";
+    addr = "156.249.8.207";
+    port = 8082;
+  }
 ]
